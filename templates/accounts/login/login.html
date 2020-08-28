@@ -1,0 +1,219 @@
+<link rel="stylesheet" src="../../../static/resource/reset.css">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+    <style>
+        a:link { text-decoration: none;}
+
+        #top{
+            position: absolute;
+            width: 1920px;
+            height: 100px;
+            left:0px;
+            top:0px;
+            background: #333333;
+        }
+        #main{
+            position: absolute;
+            left: 5.21%;
+            right: 84.11%;
+            top: 32%;
+            bottom: 33%;
+            width: fit-content;
+            font-family: East Sea Dokdo;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 50px;
+            line-height: 32px;
+            /* identical to box height */
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+        #login{
+            position: absolute;
+            left: 82.86%;
+            right: 11.2%;
+            top: 30%;
+            bottom: 30%;
+            background: #6F53FE;
+            border-radius: 47px;
+            border: none;
+            font-family: Noto Sans KR;
+            width: 120px;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 32px;
+            padding-top: 5px;
+            color: #FFFFFF;
+            text-decoration: none;
+            text-align: center;
+        }
+         #login:focus{
+            outline: none;
+        }
+        #login:hover{
+            background: #4E30E6;
+        }
+        #signup{
+            position: absolute;
+            left: 90.94%;
+            right: 5.21%;
+            top: 35%;
+            bottom: 36%;
+            font-family: Noto Sans KR;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 32px;
+            background: none;
+            /* identical to box height */
+            color: #FFFFFF;
+            border: none;
+            text-decoration: none;
+            width: max-content;
+        }
+        #signup:focus{
+            outline: none;
+        }
+        #signup:hover{
+            color: #8D8D8D;
+        }
+        #form_div{
+            background-image:url("../../../static/resource/Rectangle30.png");
+            width:1920px;
+            height:800px;
+            position: absolute;
+            left:0px;
+            top:100px;
+        }
+        #bottom{
+            position: absolute;
+            width: 1920px;
+            height: 180px;
+            left: 0px;
+            top: 900px;
+            background: #333333;
+        }
+        .round{
+            border: 1px solid #6F53FE;
+            box-sizing: border-box;
+            border-radius: 47px;
+            background: none;
+            width: 469px;
+            height: 58px;
+            position: relative;
+            left: 725px;
+        }
+        .round:focus{
+            outline: none;
+        }
+        .round:focus::-webkit-input-placeholder{
+            color: transparent;
+        }
+        .round::placeholder{
+            font-family: Noto Sans KR;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 23px;
+            /* identical to box height */
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+            position: relative;
+            left:10%;
+        }
+        #email{
+            position: absolute;
+            top:240px;
+
+        }
+        #password{
+            position: absolute;
+            top:350px;
+        }
+        #submitBtn{
+            position: absolute;
+            width: 114px;
+            height: 58px;
+            left: 55.93%;
+            right: 37.81%;
+            top: 60.81%;
+            background: #6F53FE;
+            border-radius: 47px;
+            font-family: Noto Sans KR;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 29px;
+            color: #FFFFFF;
+            border: none;
+        }
+        #submitBtn:focus{
+            outline: none;
+        }
+        #form_name{
+            position: absolute;
+            width: 160px;
+            height: 56px;
+            left: 907px;
+            top: 130px;
+            font-family: Noto Sans KR;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 38px;
+            line-height: 55px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #FFFFFF;
+        }
+        #signup_btn{
+            text-decoration: none;
+            position: absolute;
+            left: 56.61%;
+            right: 40.68%;
+            top: 53.33%;
+            bottom: 44.72%;
+            font-family: Noto Sans KR;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 20px;
+            /* identical to box height */
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #FFFFFF;
+            width: max-content;
+        }
+
+    </style>
+</head>
+<body>
+<div id = top>
+    <a id="main" href="{% url 'home' %}">Konkuksimu</a>
+    <a id="login" href="{% url 'login' %}">로그인</a>
+    <a id="signup" href="{% url 'signup' %}">회원가입</a>
+</div>
+<div id="form_div">
+    <p id="form_name" >로그인</p>
+    <form id="loginProfile" method="post" action="{% url 'login' %}">
+         {% csrf_token %}
+        <input id="email" class=round type="email" placeholder="ID" name="email">
+        <input id="password" class=round type="password" placeholder="비밀번호" name="password">
+        <a id="signup_btn">회원가입</a>
+        <button id="submitBtn" type="submit">확인</button>
+    </form>
+</div>
+<div id="bottom">
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+
+
+{% block contents %}
+<div class="row mt-5">
+    <div class="col-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>제목</th>
+                    <th>아이디</th>
+                    <th>일시</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for petition in petition_write %}
+                <tr>
+                    <th>{{ petition.id }}</th>
+                    <td>{{ petition.title }}</td>
+                    <td>{{ petition.writer }}</td>
+                    <td>{{ petition.date }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+<div class="row">
+    <div class="col-12">
+        <button class="btn btn-primary" onclick="location.href='petition_write.html'">글쓰기</button>
+    </div>
+</div>
+{% endblock %}
