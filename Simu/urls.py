@@ -20,5 +20,6 @@ from petition import views
 urlpatterns = [
     path('', include('petition.urls')),
     path('admin/', admin.site.urls),
-    path('accounts/',include('accounts.urls'))
+    path('accounts/',include('accounts.urls')),
+    path('petition/', include('petition.urls')),
 ]

@@ -7,7 +7,6 @@ from accounts.models import User
 def index(request):
     return render(request,'petition/home/home.html')
 
-
 def petition_write(request):
     if request.method == 'POST':
         form = PetitionForm(request.POST)
@@ -18,12 +17,9 @@ def petition_write(request):
             petition.contents = form.cleaned_data['contents']
             petition.writer = user_id
             petition.save()
-            
-            return redirect('/petition/list/')
-
+            return redirect('petition/petition_write.html')
     else:
         form = PetitionForm()
-
     return render(request, 'petition/petition_write.html', {'form': form})
 
 def petition_list(request):

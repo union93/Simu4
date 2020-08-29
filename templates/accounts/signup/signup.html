@@ -220,14 +220,63 @@
             text-align: center;
             color: #FFFFFF;
         }
+        #welcome{
+            position: absolute;
+            left: 90.94%;
+            right: 5.21%;
+            top: 20%;
+            bottom: 36%;
+            font-family: Noto Sans KR;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 32px;
+            background: none;
+            /* identical to box height */
+            color: #FFFFFF;
+            border: none;
+            width: max-content;
+            text-decoration: none;
+        }
+        #logout{
+            position: absolute;
+            left: 82.86%;
+            right: 11.2%;
+            top: 30%;
+            bottom: 30%;
+            background: #6F53FE;
+            border-radius: 47px;
+            border: none;
+            font-family: Noto Sans KR;
+            width: 120px;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 32px;
+            text-align: center;
+            padding-top: 5px;
+            /* identical to box height */
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+         #logout:focus{
+            outline: none;
+        }
+        #logout:hover{
+            background: #4E30E6;
+        }
 
     </style>
 </head>
 <body>
-<div id = top>
-    <a id="main" href="{% url 'home' %}">건국대학교 학생청원</a>
+<div id = "top">
+    {% if user.is_active %}
+    <p id="welcome">환영합니다 {{user.nickname}}</p>
+    <a id="logout" href="{% url 'logout'%}">로그아웃</a> 
+    {% else %}
     <a id="login" href="{% url 'login' %}">로그인</a>
-    <a id="signup" href="{% url 'signup' %}">회원가입</a>
+    <a id="signup" href="{% url 'signup' %}">회원가입</a>  
+    {% endif %}
 </div>
 <div id="form_div">
     <p id="form_name" >회원가입</p>

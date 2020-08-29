@@ -53,8 +53,7 @@ def logout(request):
         auth.logout(request)
         return redirect('home')
     else:
-        return render(request, 'accounts/login/login.html')
-
+        return render(request,'accounts/login/login.html')
 
 def activate(request, uidb64, token):
     try:
