@@ -11,12 +11,6 @@ class PetitionForm(forms.Form):
         },
         max_length=128, label="제목"
     )
-    OPTIONS = (
-        10,
-        25,
-        50,
-    )
-    accept_count = forms.ChoiceField(widget=forms.RadioSelect, choices=OPTIONS)
 
     contents = forms.CharField(
          error_messages={

@@ -67,5 +67,5 @@ def activate(request, uidb64, token):
         auth.login(request, user)
         return redirect('home')  # 홈화면 리디렉션
     else:
-        return render(request, 'home', {'error': '계정 활성화 오류'})
+        return render(request, '../../templates/petition/home/home.html', {'error': '계정 활성화 오류'})
     return

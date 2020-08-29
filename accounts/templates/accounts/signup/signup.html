@@ -6,11 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <title>회원가입</title>
-    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
     <style>
         a:link { text-decoration: none;}
-
-
 
         #top{
             position: absolute;
@@ -27,14 +24,13 @@
             top: 32%;
             bottom: 33%;
             width: fit-content;
-            font-family: East Sea Dokdo;
+            font-family: Noto Sans KR;
             font-style: normal;
-            font-weight: normal;
-            font-size: 50px;
-            line-height: 32px;
+            font-weight: 900;
+            font-size: 24px;
+            line-height: 35px;
             /* identical to box height */
             color: #FFFFFF;
-            text-decoration: none;
         }
         #login{
             position: absolute;
@@ -274,7 +270,6 @@
 </head>
 <body>
 <div id = "top">
-    <a id="main" href="{% url 'home' %}">Konkuksimu</a>
     {% if user.is_active %}
     <p id="welcome">환영합니다 {{user.nickname}}</p>
     <a id="logout" href="{% url 'logout'%}">로그아웃</a> 
